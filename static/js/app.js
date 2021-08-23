@@ -28,7 +28,7 @@ function show_charts(select_data) {
                 mode: "markers",
                 marker: {
                     size: selected_id.sample_values,
-                    color: selected_id.otu_ids,
+                   color: selected_id.otu_ids,
                     text: selected_id.otu_labels,
                 }
             }
@@ -54,7 +54,7 @@ function show_charts(select_data) {
     })
 }
 
-// Fetch the JSON data and console log it
+// Select div from charts and load in data with dropdown menu
 d3.json("samples.json").then((data) => {
     dropdown = d3.select("#selDataset")
     console.log(data);
