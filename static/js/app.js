@@ -40,14 +40,14 @@ function show_charts(select_data) {
 
 //Display the sample metadata, i.e., an individual's demographic information.
         demographics_data = data.metadata.filter(sample => sample.id == select_data)
-        demographics = demographics_data[0]
-        console.log(demographics)
-
+        demographics_display = demographics_data[0]
+        console.log(demographics_display)
+        //select div for demographics dashboard
         var demo_dash = d3.select("#sample-metadata");
-
+        //clear metadata if exists
         demo_dash.html("");
         // change metadata for each_choice
-        Object.entries(demographics).forEach(([key, value]) => {
+        Object.entries(demographics_display).forEach(([key, value]) => {
             demo_dash.append("h6").text(`${key}:${value}`);
         })
 
