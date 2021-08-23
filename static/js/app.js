@@ -39,18 +39,18 @@ function show_charts(select_data) {
         Plotly.newPlot('bubble', bubble_data, bubble_layout)
 
 //Display the sample metadata, i.e., an individual's demographic information.
-        demographics_data = data.metadata.filter(sample => sample.id == select_data)
-        demographics_display = demographics_data[0]
+        var demographics_data = data.metadata.filter(sample => sample.id == select_data)
+        var demographics_display = demographics_data[0]
         console.log(demographics_display)
         //select div for demographics dashboard
         var demo_dash = d3.select("#sample-metadata");
         //clear metadata if exists
         demo_dash.html("");
-        // change metadata for each_choice
+        //Update metadata for selected ID &
+        //Display each key-value pair from the metadata JSON object somewhere on the page.
         Object.entries(demographics_display).forEach(([key, value]) => {
-            demo_dash.append("h6").text(`${key}:${value}`);
+            demo_dash.append("table").text(`${key}:${value}`);
         })
-
     })
 }
 
