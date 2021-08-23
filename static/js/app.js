@@ -1,8 +1,5 @@
 // Use the D3 library to read in samples.json.
 //Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
-    //Use sample_values as the values for the bar chart.
-    //Use otu_ids as the labels for the bar chart.
-    //Use otu_labels as the hovertext for the chart.
 function show_charts(select_data) {
     d3.json("samples.json").then((data) => {
         selected_id = data.samples.filter(sample => sample.id == select_data)
@@ -23,11 +20,6 @@ function show_charts(select_data) {
         Plotly.newPlot('bar', bar_data, barlayout)
 
 //Create a bubble chart that displays each sample.
-    //Use otu_ids for the x values.
-    //Use sample_values for the y values.
-    //Use sample_values for the marker size.
-    //Use otu_ids for the marker colors.
-    //Use otu_labels for the text values.
         var bubble_data = [
             {
                 x: selected_id.otu_ids,
